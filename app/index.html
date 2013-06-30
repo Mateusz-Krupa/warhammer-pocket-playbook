@@ -24,31 +24,15 @@
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+    <div class="container row-fluid" ng-view></div>
 
-
-    <header class="navbar">
-        <div class="navbar-inner">
-            <!-- <a class="brand" href="#"></a> -->
-            <ul class="nav">
-                <li class="active"><a href="#/characterList">Characters</a></li>
-                <li><a href="#/dice">Dice</a></li>
-                <li><a href="#/notes">Notes</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <div class="container" ng-view></div>
-
-    <footer>
-       Some footter
-    </footer>
 
     <script src="components/angular/angular.js"></script>
-
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/services/charakterList.js"></script>
     <script src="scripts/controllers/main.js"></script>
+
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

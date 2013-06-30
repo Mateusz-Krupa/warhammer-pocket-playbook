@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jasmine" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/node_modules/grunt-karma/node_modules/karma/adapter/lib/jasmine.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/node_modules/grunt-karma/node_modules/karma/adapter/lib/jasmine.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

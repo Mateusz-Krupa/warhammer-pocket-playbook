@@ -10,8 +10,8 @@ angularModule.controller('MainCtrl',function ($scope) {
     ];
 }).controller("CharacterListController", function ($scope, characterList) {
         $scope.items = [];
-        init();
 
+        init();
         function init() {
             $scope.items = characterList.query();
         }
