@@ -1,0 +1,37 @@
+<section class="characters" ng-controller="CharacterListController">
+    <h3>Select your character</h3>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              Profession
+            </th>
+            <th>
+                Race
+            </th>
+            <th>
+                Last Open
+            </th>
+        </tr>
+        <tr ng-repeat="item in items">
+            <td>
+               <a ng-href="#/character/{{item.id}}"> {{item.name}}
+            </td>
+            <td>
+                {{item.profession}}
+            </td>
+            <td>
+                {{item.race}}
+            </td>
+            <td>
+               {{item.data}}
+            </td>
+        </tr>
+        </thead>
+    </table>
+
+</section>
