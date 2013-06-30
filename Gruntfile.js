@@ -132,7 +132,11 @@ module.exports = function (grunt) {
         javascriptsDir: '<%= yeoman.app %>/scripts',
         fontsDir: '<%= yeoman.app %>/styles/fonts',
         importPath: '<%= yeoman.app %>/components',
-        relativeAssets: true
+        // The next line tells compass where to put the sprites
+        // and the HTTP path to them.
+        raw: 'http_images_path = "/images/"\ngenerated_images_dir = ".tmp/images"\nhttp_generated_images_path = "/images/"',
+        // This doesn't work with relative paths.
+        relativeAssets: false
       },
       dist: {},
       server: {
@@ -164,16 +168,23 @@ module.exports = function (grunt) {
         dirs: ['<%= yeoman.dist %>']
       }
     },
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
+      imagemin: {
+          dist: {
+              files: [{
+                  expand: true,
+                  cwd: '<%= yeoman.app %>/images',
+                  src: '{,*/}*.{png,jpg,jpeg}',
+                  dest: '<%= yeoman.dist %>/images'
+              }, {
+                  // Copy generated sprites over to the dist/
+                  // folder during the build step.
+                  expand: true,
+                  cwd: '.tmp/images',
+                  src: '{,*/}*.png',
+                  dest: '<%= yeoman.dist %>/images'
+              }]
+          }
+      },
     cssmin: {
       dist: {
         files: {
