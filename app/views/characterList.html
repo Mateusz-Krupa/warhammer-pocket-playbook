@@ -1,38 +1,39 @@
 <section class="characters" ng-controller="CharacterListController">
+    <a class="btn" href="/">Home</a> <button class="btn btn-danger pull-right" ng-click="activeDelete()">Delete</button>
     <h3>character Sheets</h3>
-    <button class="btn">create-new</button>
+    <a class="btn btn-success" href="#/newChracter">create-new</a>
+
     <div class="wraper">
-    <table class="table">
-        <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-              Profession
-            </th>
-            <th>
-                Race
-            </th>
-            <th>
-                Last Open
-            </th>
-        </tr>
-        <tr ng-repeat="item in items">
-            <td>
-               <a ng-href="#/character/{{item.id}}"> {{item.name}}
-            </td>
-            <td>
-                {{item.profession}}
-            </td>
-            <td>
-                {{item.race}}
-            </td>
-            <td>
-               {{item.data}}
-            </td>
-        </tr>
-        </thead>
-    </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Profession
+                </th>
+                <th>
+                    Race
+                </th>
+                <th>
+                </th>
+            </tr>
+            <tr ng-repeat="item in items">
+                <td>
+                    <a ng-href="#/character/{{item.id}}"> {{item.name}}
+                </td>
+                <td>
+                    {{item.profession}}
+                </td>
+                <td>
+                    {{item.race}}
+                </td>
+                <td>
+                    <span ng-click="removeCharacter($index, item.id)" class="menu-icons-trash {{deleteBtn}}"></span>
+                </td>
+            </tr>
+            </thead>
+        </table>
     </div>
 </section>

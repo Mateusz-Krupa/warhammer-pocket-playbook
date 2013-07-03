@@ -13,6 +13,10 @@ angularModule.config(function ($routeProvider) {
         .when('/dice', {
             templateUrl: 'views/dice.html'
         })
+        .when('/character',{
+            templateUrl: 'views/character.html',
+            controller: 'CharacterController'
+        })
         .otherwise({
             redirectTo: '/'
         });
